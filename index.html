@@ -3,9 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Demo 1: Responsive Images</title>
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>
+            Week 4 Demo 1: Responsive Images
+        </h1>
+        <section>
+            <h2>
+                Same Image, different Sizes
+            </h2>
+
+            <img 
+                srcset="
+                    images/dummy_320x200.png 320w,
+                    images/dummy_640x400.png 640w,
+                    images/dummy_1024x600.png 1024w,
+                "
+                sizes="
+                    (max-width: 320px) 320px,
+                    (max-width: 640px) 640px,
+                    (max-width: 1024px) 1024px
+                "
+                src="images/dummy_640x400.png"
+                alt="placeholding 640x400 image"
+            >
+        </section>
+        <section>
+            <h2>
+                Same Size, different Image
+            </h2>
+
+            <img
+                srcset="
+                    images/dummy_320x320.png 320w,
+                    images/dummy_640x640.png 640w,
+                    images/dummy_960x960.png 920w
+                "
+                src="images/dummy_640x640.png"
+                alt="placeholding 640x400 image"
+                class="avatar"
+            >
+        </section>
+        <section>
+            <h2>
+                Art Direction
+            </h2>
+
+            <picture>
+
+                <source 
+                    srcset="images/fall-dog-1200.jpg"
+                    media="(min-width:900px)">
+
+                <source 
+                    srcset="images/fall-dog-900.jpg"
+                    media="(min-width:640px)">
+
+                <source 
+                    srcset="images/fall-dog-640.jpg"
+                    media="(min-width:320px)">
+                
+                    <img src="images/fall-dog-900.jpg" alt="dog sitting on their bed">
+
+            </picture>
+        </section>
+    </div>
 </body>
 </html>
